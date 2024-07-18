@@ -64,7 +64,7 @@ CREATE OR REPLACE TRANSIENT TABLE TECHCATALYST_DE.JASON.SONGPLAYS_FACT_TEMP (
 To achieve Sparkify's analytical goals, the creation of a data lake was instrumental. In the ETL pipeline, a staging area within S3 served as the data lake and captured the parquet files that were written from databricks. Housing the data lake in an S3 bucket also enabled the use of AWS Glue and AWS Athena to perform necessary data validation checks, such as row count, before loading the data into the target tables within Snowflake. Storage in S3 is also relatively inexpensive and allows Sparkify to access the post-transformed data in a centralized location to be used for different areas of the business in a variety of capacities.
 
 
-## DATABASE SCHEMA DESIGN/ETL PIPELINE & SUMMARY OF PROCESS
+## DATABASE SCHEMA DESIGN/ETL PIPELINE
 
 The schema design that was chosen for Sparkify's transformed tables was the star schema, which incorporates a fact table and various dim tables. The fact table, SONGPLAYS_FACT, includes an incremental primary key called songplay_id as well as keys that connect the table to the various dim tables (TS=time_dim.TS, USERID=user_dim.userId, ARTIST_ID=artist_dim.artist_id, SONG_ID=songs_dim.SONG_ID). This schema will prove to be beneficial for Sparkify's analytical needs because it enables faster query processing, easier business reporting, and streamlined join logic.
 
@@ -91,3 +91,14 @@ extracted the partitioned by columns using for example (songs_dim):
 
              REGEXP_SUBSTR(METADATA$FILENAME, 'year=(\\d+)', 1, 1, 'e')::STRING AS PARTITION_YEAR,
              REGEXP_SUBSTR(METADATA$FILENAME, 'artist_id=([^/]+)', 1, 1, 'e')::STRING AS PARTITION_ARTIST_ID
+
+
+
+# SUMMARY OF PROCESS
+- Extract raw json files from s3 bucket
+- Use Spark and PySpark in databricks to transform data, create pyspark dataframes holding the tables, and export in parquet format
+- Load transformed dim and fact tables into s3 data lake/staging area
+- AWS Glue crawler and AWS Athena querying to validate row count before target load
+- Load table parquet data from data lake into Snowflake external stage
+- Create target table DDL in Snowflake
+- COPY INTO bulk load and INSERT INTO for tables that were partitioned when exporting from databricks
