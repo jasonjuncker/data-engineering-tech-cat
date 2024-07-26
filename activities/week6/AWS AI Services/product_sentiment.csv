@@ -1,0 +1,21 @@
+PRODUCT ID,PRODUCT DESCRIPTION,REVIEW ID,REVIEW TEXT,SENTIMENT
+1,High-quality smartphone with excellent camera.,R1,"Great camera quality, but battery life could be better.",MIXED
+1,High-quality smartphone with excellent camera.,R2,Very satisfied with this smartphone. Worth every penny.,POSITIVE
+2,Durable laptop with long battery life.,R3,Excellent performance and battery life. Highly recommend.,POSITIVE
+2,Durable laptop with long battery life.,R4,Disappointed with the build quality. Feels cheap.,NEGATIVE
+3,Wireless noise-canceling headphones.,R5,Fantastic noise cancellation and sound quality.,POSITIVE
+3,Wireless noise-canceling headphones.,R6,Not comfortable to wear for long periods.,NEGATIVE
+4,Smartwatch with various health tracking features.,R7,Great health tracking features but too expensive.,MIXED
+4,Smartwatch with various health tracking features.,R8,Love the design and functionality. Would buy again.,POSITIVE
+5,Portable Bluetooth speaker with rich sound.,R9,Sound quality is amazing for its size.,POSITIVE
+5,Portable Bluetooth speaker with rich sound.,R10,Battery life is too short for outdoor use.,NEGATIVE
+6,High-resolution monitor with wide viewing angles.,R11,Crisp and clear display. Perfect for gaming.,POSITIVE
+6,High-resolution monitor with wide viewing angles.,R12,Experienced some dead pixels after a week.,NEGATIVE
+7,Fast and reliable external hard drive.,R13,Fast data transfer speeds and reliable.,POSITIVE
+7,Fast and reliable external hard drive.,R14,Stopped working after a month of use.,NEGATIVE
+8,Compact digital camera with 4K video recording.,R15,Compact and takes great pictures.,POSITIVE
+8,Compact digital camera with 4K video recording.,R16,Image quality is poor in low light conditions.,NEGATIVE
+9,Ergonomic mechanical keyboard.,R17,Very comfortable and responsive keys.,POSITIVE
+9,Ergonomic mechanical keyboard.,R18,Keys started sticking after a week of use.,NEGATIVE
+10,Versatile multi-port USB charger.,R19,Charges multiple devices quickly.,POSITIVE
+10,Versatile multi-port USB charger.,R20,Overheats when charging multiple devices at once.,NEGATIVE
